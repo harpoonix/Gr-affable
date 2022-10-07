@@ -1,7 +1,7 @@
 #include"heap.cpp"
 
 
-Heap *createHeap(char data[], int freq[], int size){
+Heap *createHeap(string data, int freq[], int size){
 
     // Create a Heap storing data with frequency freq and given size 
     // data : array of character, whose elements are to be stored at Nodes
@@ -20,11 +20,11 @@ public:
     }
 
     // Create a HuffmanTree for given data, freq, and size
-    HuffmanTree(char data[], int freq[], int size){
+    HuffmanTree(string data, int freq[], int size){
         Heap *heap = createHeap(data,freq,size);
         /**
          * Idea is to utilize heap for accessing element with 
-         * minimum freq O(1) time, then get two nodes with 
+         * minimum freq in O(1) time, then get two nodes with 
          * minimum freq from the heap and insert a new Node
          * made by combining these two lowest freq nodes into Huffman Tree.
          * The heap created above will become an Huffman Tree.
