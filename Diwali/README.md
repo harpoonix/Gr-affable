@@ -29,3 +29,9 @@ Your program will take as input a $48$-character string, and output the number o
 ??????R??????U????????????????R??D?????L????????
 **Output**:  
 65
+
+## Optimisation
+
+An ordinary backtracking based approach would give the answer, but we can optimise our search for paths by pruning known-to-fail branches of the case tree. If we know certain configurations will never be able to visit all houses, we can stop looking into further cases based off of that configuration.
+
+If the car is at a house on the right edge, say, and both the houses above and below it are unvisited, then it is impossible to visit both of them without visiting an already visited house in the process. Can you see why? What other cases like this result in a failed path and can be used to stop the search when identified?
