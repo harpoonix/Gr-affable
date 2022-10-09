@@ -49,3 +49,7 @@ NO
 ### Time Complexity
 
 Analyse the time complexity of your Algorithm that you have used yourself :)
+
+## Instructions
+- We were working on ``checkPaths.cpp`` but were not able to solve  the problem. Can you help us by contributing to this code and solving this question?
+- Upload your code as ``<your_GitHub_username>_checkPaths.cpp`` in this directory

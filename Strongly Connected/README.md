@@ -50,3 +50,6 @@ If any of the above cases is observed, then you can easily get that the solution
 
 - Naive approach : A simple idea to find bridges would be to delete every edge one by one and check every time whether the resulting graph is connected. You have to check the connectednes of resulting graphs using BFS/DFS for each edge. So, the time complexity would be O(E*(V+E)). Do not forget to add the removed edge back again into the original graph.
 - A Better Idea : After DFS traversal, an edge $(x,y)$ (such that x is parent of y) in DFS tree would be a bridge if there is no path to reach $x$ or any ancestor of $x$ from subtree rooted at y other than the edge $(y,x)$ itself. The algorithm is based on [Tarjan's Algorithm](https://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/), which is a efficient way to find bridges and Articulation points in linear time.
+
+## Instructions
+Upload your code as ``<your_GitHub_username>_stronglyConnected.cpp``. You may upload different versions of your code according to the algorithm that you are using if you wish. Just add version number at the end of the code you upload.
