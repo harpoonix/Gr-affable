@@ -6,6 +6,18 @@ a node to another node.
 A graph is said to be **Strongly Connected** if there is a path from any node to **all** other nodes in the graph.
 For example, consider a directed graph, which can be traversed only in a single direction. Therefore, it may or may not always be possible to reach every other node from a particular node.
 
+<div align="center">
+<img alt="A Linear Graph which is not Strongly Connected" src="./LinearDAG.png" width=300px></img>
+</div>
+
+The above is a Linear Graph which is not Strongly Connected. (Can't reach $A$ from $B$)
+
+Below, The Graph on the right is **NOT** Strongly Connected, but the one on the **left is.**
+
+<div align="center">
+<img alt="The Graph on the right is NOT Strongly Connected, but the one on the left IS" src="./DirectedCyclic.png" width=300px></img>
+</div>
+
 ## Strongly Connected Components
 
 Subsets of nodes in a directed graph where each node is connected to other node in the subset are strongly connected components.
