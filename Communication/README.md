@@ -35,3 +35,5 @@ Inverse modulus of $e$ can be found using the **Extended Euclidean Algorithm**.
 $$de = qN + 1 \implies (-q)\cdot N + d\cdot e = 1 = \operatorname{gcd}(N, e)$$
 
 The coefficients $(-q)$(not useful currently) and $d$ (useful) can be computed using Extended Euclid's ALgorithm.
+
+You can check out this [awesome paper](https://www.nku.edu/~christensen/the%20mathematics%20of%20the%20RSA%20cryptosystem.pdf) for lucid explanation on the fascinating mathematics behind RSA.
