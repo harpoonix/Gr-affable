@@ -6,8 +6,6 @@ struct HeapNode{
     string data;
     HeapNode *left, *right;
 
-    HeapNode() : freq(0), data(""), left(NULL), right(NULL) {}
-    HeapNode(int Freq, string Data) : freq(Freq), data(Data), left(NULL), right(NULL){}
     HeapNode(int Freq, string Data, HeapNode *leftChild, HeapNode *rightChild) : freq(Freq), data(Data), left(leftChild), right(rightChild) {}
 
     bool isLeaf();
