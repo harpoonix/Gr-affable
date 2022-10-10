@@ -36,6 +36,21 @@ You are given an undirected graph. You have to check whether this can be convert
 - Print $m$ lines with each line having two integers representing a directed edge from first integer's node to second
 - If no such strongly connected graph exists, then print ``NOT POSSIBLE``
 
+### Sample Input 
+```
+4 4
+2 1
+2 3
+1 4
+4 3
+```
+### Sample Output
+```
+1 2
+2 3
+3 4
+4 1
+```
 ## Hints
 
 Notice that there exist two cases in which making a strongly connected graph won't be possible -
