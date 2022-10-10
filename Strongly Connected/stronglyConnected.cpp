@@ -36,8 +36,8 @@ int main(){
     for(int i = 0; i < m; i++){
         int x, y;
         cin >> x >> y;
-        graph[x].push_back(y,i);        // An error has been thrown
-        graph[y].push_back(x,i);        // Can you figure it out ? 
+        graph[x].push_back(make_pair(y,i));        // An error has been thrown
+        graph[y].push_back(make_pair(x,i));        // Can you figure it out ? 
     }
     dfs();
     /**
