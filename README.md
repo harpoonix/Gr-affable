@@ -1,6 +1,6 @@
-# Gr-Affable, Hello FOSS 2022
+# Gr-Affable | Hello FOSS 2022
 
-Welcome to **Gr-Affable**, a project on DSA and Graph Theory under **Hello FOSS 2022** by WnCC!
+Welcome to **Gr-Affable**, a project on DSA and Graph Theory under **Hello FOSS 2022** !
 
 Here, We explore algorithms with special emphasis on Graph Theory. 
 
