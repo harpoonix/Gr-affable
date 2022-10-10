@@ -36,6 +36,21 @@ You are given an undirected graph. You have to check whether this can be convert
 - Print $m$ lines with each line having two integers representing a directed edge from first integer's node to second
 - If no such strongly connected graph exists, then print ``NOT POSSIBLE``
 
+### Sample Input 
+```
+4 4
+2 1
+2 3
+1 4
+4 3
+```
+### Sample Output
+```
+1 2
+2 3
+3 4
+4 1
+```
 ## Hints
 
 Notice that there exist two cases in which making a strongly connected graph won't be possible -
@@ -50,3 +65,6 @@ If any of the above cases is observed, then you can easily get that the solution
 
 - Naive approach : A simple idea to find bridges would be to delete every edge one by one and check every time whether the resulting graph is connected. You have to check the connectednes of resulting graphs using BFS/DFS for each edge. So, the time complexity would be O(E*(V+E)). Do not forget to add the removed edge back again into the original graph.
 - A Better Idea : After DFS traversal, an edge $(x,y)$ (such that x is parent of y) in DFS tree would be a bridge if there is no path to reach $x$ or any ancestor of $x$ from subtree rooted at y other than the edge $(y,x)$ itself. The algorithm is based on [Tarjan's Algorithm](https://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/), which is a efficient way to find bridges and Articulation points in linear time.
+
+## Instructions
+Upload your code as ``<your_GitHub_username>_stronglyConnected.cpp``. You may upload different versions of your code according to the algorithm that you are using if you wish. Just add version number at the end of the code you upload.
