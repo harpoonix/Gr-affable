@@ -11,7 +11,7 @@ int max_subarray_sum(int *array, int n) {
         sum = max(array[k],sum+array[k]);
         best = max(best,sum);
     }
-    cout<<best;
+    return best;
 }
 
 int main(){
