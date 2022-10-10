@@ -35,7 +35,7 @@ int main(){
         
         int boughtIndex = getMinIndex(price);       // Index with minimum price
         for(int j = 0; j < n; j++){           
-            if(price[j] > price[boughtIndex] && price[j] <= customer[i]){
+            if(price[j] > price[boughtIndex] && !bought[boughtIndex] && price[j] <= customer[i]){
                 boughtIndex = j;
             }
         }
