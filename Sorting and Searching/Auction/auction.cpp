@@ -1,54 +1,65 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // function to get the index with minimum value
-int getMinIndex(vector<int> list){
+int getMinIndex(vector<int> list)
+{
     int minIndex = 0;
-    for(int i = 0; i < list.size(); i++){
-        if(list[i] < list[minIndex]){
+    for (int i = 0; i < list.size(); i++)
+    {
+        if (list[i] < list[minIndex])
+        {
             minIndex = i;
         }
     }
     return minIndex;
 }
 
-int main(){
+int main()
+{
     int n, m;
     cin >> n >> m;
-    vector<int> price;          // vector of prices of each device
-    vector<int> customer;       // vector of customers in the order they arrive
-    bool bought[n];             // true if a device is sold
+    vector<int> price;    // vector of prices of each device
+    vector<int> customer; // vector of customers in the order they arrive
+    bool bought[n];       // true if a device is sold
 
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
         int p;
         cin >> p;
         price.push_back(p);
         bought[i] = false;
     }
-    for(int i = 0; i < m; i++){
+    for (int i = 0; i < m; i++)
+    {
         int p;
         cin >> p;
         customer.push_back(p);
     }
 
-    for(int i = 0; i < m; i++){
-        
-        int boughtIndex = getMinIndex(price);       // Index with minimum price
-        for(int j = 0; j < n; j++){           
-            if(price[j] > price[boughtIndex] && !bought[boughtIndex] && price[j] <= customer[i]){
+    for (int i = 0; i < m; i++)
+    {
+
+        int boughtIndex = getMinIndex(price); // Index with minimum price
+        for (int j = 0; j < n; j++)
+        {
+            if (price[j] >= price[boughtIndex] && !bought[j] && price[j] <= customer[i])
+            {
                 boughtIndex = j;
             }
         }
 
-        // Now boughtIndex variable has the index of the 
-        // price which is maximum among all those prices 
+        // Now boughtIndex variable has the index of the
+        // price which is maximum among all those prices
         // that are below the maximum price as told by customer
 
-        if(!bought[boughtIndex]){           // Sold it to customer, if not bought already by someone else
+        if (!bought[boughtIndex])
+        { // Sold it to customer, if not bought already by someone else
             bought[boughtIndex] = true;
             customer[i] = price[boughtIndex];
         }
-        else {          // else give -1 to customer
+        else
+        { // else give -1 to customer
             customer[i] = -1;
         }
         /**
@@ -60,8 +71,8 @@ int main(){
     }
 
     // Printing the output
-    for(int i = 0; i < m; i++){
+    for (int i = 0; i < m; i++)
+    {
         cout << customer[i] << " ";
     }
-
 }
