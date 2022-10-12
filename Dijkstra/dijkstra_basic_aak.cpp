@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -23,6 +24,7 @@ void dijkstra(int start, vector<vector<pii>> &adj, vb &visited, vi &lengths){
     lengths[start] = 0;
     for (int i=0; i<n; i++) {
         // Run n loops through the nodes, taking one unprocessed node at a time
+        // This implementation is slow, use priority queue instead
         int least = -1;
         for (int j=0; j<n; j++) {
             if (!visited[j] && (least==-1 || lengths[j] < lengths[least])){
@@ -63,6 +65,7 @@ int main(){
     visited.resize(n, 0); // All the nodes are unvisited in the beginning
     vector<int> lengths;
     lengths.resize(n, INT32_MAX/2);
+    // try and incorporate priority queues
 
     dijkstra(source, adj, visited, lengths);
 
