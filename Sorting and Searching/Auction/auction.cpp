@@ -1,6 +1,4 @@
-// #include<bits/stdc++.h>
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 // function to get the index with minimum value
@@ -19,7 +17,7 @@ int main(){
     cin >> n >> m;
     vector<int> price;          // vector of prices of each device
     vector<int> customer;       // vector of customers in the order they arrive
-    bool bought[1000];             // true if a device is sold
+    bool bought[n];             // true if a device is sold
 
     for(int i = 0; i < n; i++){
         int p;
