@@ -11,8 +11,21 @@ int main(){
 
 	string str = "helloFOSS_Gr-affable";
 	int size = str.length();
-	int freq[size];				// Array for frequency of each character
-	string data;				// Compressed string
+				
+	string data="";				// Compressed string
+	for(int i = 0; i < str.length(); i++){
+		if(!isPresent(data,str[i])){
+			data += str[i];
+		}
+	}
+	int n= data.length();
+	int freq[n];
+	for(int i = 0; i < n; i++){
+    freq[i]=0;}
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < str.length(); j++){
+			if(data[i]==str[j])
+			freq[i]+=1;}} // Corrected code for frequency of characters and compressed string data
 	/**
 	 * Create a string 'data' such that each element of it is
 	 * a character in original string 'str', uniquely. Map it with freq
@@ -20,15 +33,7 @@ int main(){
 	 * freq[3] = 2 = frequency of character at index 3 in data, i.e. '0'
 	 * In short, freq[i] = frequency of character at data[i]
 	 */
-	for(int i = 0; i < str.length(); i++){
-		if(isPresent(data,str[i])){
-			freq[i] += 1;
-		}
-		else {
-			data += str[i];
-			freq[i] += 1;
-		}
-	}
+	
 
 	for(int i = 0; i < data.length(); i++){
 		cout << data[i] << " " << freq[i] << endl;
