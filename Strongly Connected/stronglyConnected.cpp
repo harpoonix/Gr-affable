@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 #define F first
@@ -36,8 +38,12 @@ int main(){
     for(int i = 0; i < m; i++){
         int x, y;
         cin >> x >> y;
-        graph[x].push_back(y,i);        // An error has been thrown
-        graph[y].push_back(x,i);        // Can you figure it out ? 
+        pp temp;        // create a temporary pair
+        temp.first = y;
+        temp.second = i;
+        graph[x].pb(temp);        // An error has been thrown (pb expected only one parameter)
+        temp.first = x;
+        graph[y].pb(temp);        // Can you figure it out ? (Yes!)
     }
     dfs();
     /**
