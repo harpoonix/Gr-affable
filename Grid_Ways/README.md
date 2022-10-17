@@ -15,6 +15,8 @@ After this, there are $n$ lines that describe the grid. Each line has n characte
 ### Example
 
 Input  
+
+```
 10
 .*......*.
 ...*...*..
@@ -25,7 +27,8 @@ Input
 ..*.......
 ....*..*..
 *........*
-....*.....  
+....*.....
+```
 
 Output  
-344
+`344`
