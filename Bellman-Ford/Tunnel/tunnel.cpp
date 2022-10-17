@@ -6,12 +6,14 @@ int main(){
     int n, m;
     cin>>n>>m;
     long long int *tunnel = new long long int[m];
-    int *start = new int[m];
-    int *end = new int[m];
+    int *pair_start_end = new int[m][2];
+    
     vector<int> score;
     for(int i = 0; i < m; i++){
-        cin >> start[i] >> end[i] >> tunnel[i];
-    }
+    for(int j = 0; j < 2; j++){
+        cin >> pair_start_end[i][j];
+    } // paired up start and end arrays into multi-dimensional array
+}
     int first = 1;
     int last = n;
     for(int i = 0; i < m; i++){
