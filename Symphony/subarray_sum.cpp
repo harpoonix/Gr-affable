@@ -7,12 +7,21 @@ int max_subarray_sum(int *array, int n) {
     // Go through all possible subarays
     // Maintain a maximum of their sum, return the maximum
     int best_sum = 0;
+    int sum_of_this_subarray = 0;
+    int ender=1;
     for (int i=0; i<n; i++) {
         for (int j=i; j<n; j++) {
-            int sum_of_this_subarray = 0;
-            for (int k=i; k<=j; k++) {
-                sum_of_this_subarray += array[k];
-            }
+        
+            if (ender==1){
+                
+                for (int k=i; k<=j; k++) {
+             
+               sum_of_this_subarray += array[k];
+               ender++;
+               }
+               }
+               else {sum_of_this_subarray= sum_of_this_subarray + array[j+1];}
+            
             best_sum = max(best_sum, sum_of_this_subarray);
         }
     }
