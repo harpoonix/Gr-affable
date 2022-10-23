@@ -27,5 +27,7 @@ There can be a condition where a customer may come empty handed from the auction
 ```
 ### Sample Output
 ```
-3 8 -1
+3 
+8 
+-1
 ```
