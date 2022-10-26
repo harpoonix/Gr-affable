@@ -4,9 +4,31 @@ As part of the navigating system, sometimes you need to know just how many paths
 
 We can model a simple starting version of the above problem as follows.
 
-You are given an $n\times n$ grid, whose squares may have holes, and thus can't be driven over. You can only move right or down. Find the number of ways you can go from the top left square to the bottom left square, without falling into holes.
+You are given an $n\times n$ grid, whose squares may have holes, and thus can't be driven over. You can only move right or down.
+Find the number of ways you can go from the top left square to the bottom right square, without falling into holes.
 
 ## Input
 
 The first input line has an integer $n$: the size of the grid.  
 After this, there are $n$ lines that describe the grid. Each line has n characters: `.` denotes an empty cell, and `*` denotes a hole.  
+
+### Example
+
+Input  
+
+```
+10
+.*......*.
+...*...*..
+......*...
+...*.*....
+....*.....
+..*..*....
+..*.......
+....*..*..
+*........*
+....*.....
+```
+
+Output  
+`344`

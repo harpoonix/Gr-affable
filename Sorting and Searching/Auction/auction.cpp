@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
 // function to get the index with minimum value
