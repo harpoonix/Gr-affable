@@ -2,7 +2,7 @@ echo "Submission Checker"
 
 # Can be used to check all submissions 
 # Add path to testing .cpp file to generate an executable
-g++ rohankalbag_auction1.cpp -o executable 
+g++ "$(find ./ -name '*cpp' | head -1)" -o executable 
 
 rm -rf -f Test\ Cases\ Generated #Create a Folder for Generated Testcases
 mkdir Test\ Cases\ Generated
