@@ -2,21 +2,22 @@
 #include <algorithm>
 #define vi vector<int>
 using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-int max_subarray_sum(int *array, int n) {
-    // Go through all possible subarays
-    // Maintain a maximum of their sum, return the maximum
-    int best_sum = 0;
-    for (int i=0; i<n; i++) {
-        for (int j=i; j<n; j++) {
-            int sum_of_this_subarray = 0;
-            for (int k=i; k<=j; k++) {
-                sum_of_this_subarray += array[k];
-            }
-            best_sum = max(best_sum, sum_of_this_subarray);
-        }
+int max_subarray_sum(int a[], int size)
+{
+    int x = INT_MIN, y = 0;
+ 
+    for (int i = 0; i < size; i++) {
+        y = y + a[i];
+        if (x < y)
+            x = y;
+ 
+        if (y < 0)
+            y = 0;
     }
-    return best_sum;
+    return x;
 }
 
 int main(){
