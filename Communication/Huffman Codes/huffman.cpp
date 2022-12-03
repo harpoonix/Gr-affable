@@ -11,7 +11,7 @@ int main(){
 
 	string str = "helloFOSS_Gr-affable";
 	int size = str.length();
-	int freq[size];				// Array for frequency of each character
+	int freq[size]={};				// Array for frequency of each character
 	string data;				// Compressed string
 	/**
 	 * Create a string 'data' such that each element of it is
