@@ -30,16 +30,26 @@ int main(){
         int p;
         cin >> p;
         customer.push_back(p);
-    }
+    } //the prices accepted are not sorted into increasing order, Lets sort it
+    for (int i = 0; i < n; i++) {     
+        for (int j = i+1; j < n; j++) {     
+           if(price[i] > price[j]) {    
+               int temp = price[i];    
+               price[i] = price[j];    
+               price[j] = temp;    
+           }     
+        }     
+    }    
 
     for(int i = 0; i < m; i++){
         
         int boughtIndex = getMinIndex(price);       // Index with minimum price
         for(int j = 0; j < n; j++){           
-            if(price[j] > price[boughtIndex] && !bought[boughtIndex] && price[j] <= customer[i]){
+            if(price[j] > price[boughtIndex] && !bought[boughtIndex] && price[j] <= customer[i]){ 
                 boughtIndex = j;
             }
         }
+
 
         // Now boughtIndex variable has the index of the 
         // price which is maximum among all those prices 
@@ -49,10 +59,19 @@ int main(){
             bought[boughtIndex] = true;
             customer[i] = price[boughtIndex];
         }
-        else {          // else give -1 to customer
-            customer[i] = -1;
-        }
-        /**
+        else { 
+            for(int k = boughtIndex-1; k>=0; k--){           
+            if(!bought[k])
+            {customer[i] = price[k];
+            bought[k] = true; break;}
+            else
+            continue;
+            }
+        
+        
+        } // code under else statement gives customer second max price
+        /*
+        *
          * may be something is wrong here
          * Shouldn't the customer be given the second max price
          * that satisfies his conditions instead of -1 as done
