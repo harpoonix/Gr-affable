@@ -1,10 +1,18 @@
 #include "huffman.h"
+#include <iostream>
+#include <string>
 
 bool isPresent(string str, char s){
 	for(int i = 0; i < str.length(); i++){
 		if(s == str[i]) return true;
 	}
 	return false;
+}
+
+int index(string str, char s){
+	for(int i = 0; i < str.length(); i++){
+		if(s == str[i]) return i;    // returns the index of character in compressed string
+	}
 }
 
 int main(){
@@ -22,18 +30,18 @@ int main(){
 	 */
 	for(int i = 0; i < str.length(); i++){
 		if(isPresent(data,str[i])){
-			freq[i] += 1;
+			freq[index(data, str[i])] += 1;
 		}
 		else {
 			data += str[i];
-			freq[i] += 1;
+			freq[index(data, str[i])] += 1;
 		}
 	}
 
 	for(int i = 0; i < data.length(); i++){
 		cout << data[i] << " " << freq[i] << endl;
 	}
-
+	
 	HuffmanTree *tree = new HuffmanTree(data,freq,size);
 	
     int *huffman = new int[size];

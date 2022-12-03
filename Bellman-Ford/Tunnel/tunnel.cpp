@@ -6,23 +6,24 @@ int main(){
     int n, m;
     cin>>n>>m;
     long long int *tunnel = new long long int[m];
-    int *start = new int[m];
-    int *end = new int[m];
+    int start, end;
+    vector<pair<int, int>> edge;
     vector<int> score;
     for(int i = 0; i < m; i++){
-        cin >> start[i] >> end[i] >> tunnel[i];
+        cin >> start >> end >> tunnel[i];
+        edge.push_back(make_pair(start, end));
     }
     int first = 1;
     int last = n;
     for(int i = 0; i < m; i++){
-        if(start[i] == first){
+        if(edge[i].first == first){
             int sum = tunnel[i];
-            int dest = end[i];
+            int dest = edge[i].second;
             while(dest!=last){
                 for(int j = 0; j < m; j++){
-                    if(start[j] == dest){
+                    if(edge[j].first == dest){
                         sum += tunnel[j];
-                        dest = end[j];
+                        dest = edge[j].second;
                         break;
                     }
                 }
