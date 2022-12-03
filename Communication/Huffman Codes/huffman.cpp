@@ -1,10 +1,12 @@
 #include "huffman.h"
 
-bool isPresent(string str, char s){
+int isPresent(string str, char s){
 	for(int i = 0; i < str.length(); i++){
-		if(s == str[i]) return true;
+		if(s == str[i]){
+			return i;
+		}
 	}
-	return false;
+	return -1;
 }
 
 int main(){
@@ -12,7 +14,10 @@ int main(){
 	string str = "helloFOSS_Gr-affable";
 	int size = str.length();
 	int freq[size];				// Array for frequency of each character
-	string data;				// Compressed string
+	for(int i=0;i<size;i++){
+		freq[i]=0;
+	}
+	string data="";				// Compressed string
 	/**
 	 * Create a string 'data' such that each element of it is
 	 * a character in original string 'str', uniquely. Map it with freq
@@ -20,20 +25,20 @@ int main(){
 	 * freq[3] = 2 = frequency of character at index 3 in data, i.e. '0'
 	 * In short, freq[i] = frequency of character at data[i]
 	 */
-	for(int i = 0; i < str.length(); i++){
-		if(isPresent(data,str[i])){
-			freq[i] += 1;
+	for(int i = 0; i < size; i++){
+		int index=isPresent(data,str[i]);
+		if(index!=-1){
+			freq[index] += 1;
 		}
 		else {
-			data += str[i];
-			freq[i] += 1;
+			data+= str[i];
+			freq[data.length()-1]+=1;
 		}
 	}
 
 	for(int i = 0; i < data.length(); i++){
 		cout << data[i] << " " << freq[i] << endl;
 	}
-
 	HuffmanTree *tree = new HuffmanTree(data,freq,size);
 	
     int *huffman = new int[size];
