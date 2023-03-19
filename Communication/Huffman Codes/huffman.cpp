@@ -7,6 +7,13 @@ bool isPresent(string str, char s){
 	return false;
 }
 
+// Get index of the string using this function
+int isPresentWhere(string str, char s){
+	for(int i = 0; i < str.length(); i++){
+		if(s == str[i]) return i;
+	}
+}
+
 int main(){
 
 	string str = "helloFOSS_Gr-affable";
@@ -20,13 +27,24 @@ int main(){
 	 * freq[3] = 2 = frequency of character at index 3 in data, i.e. '0'
 	 * In short, freq[i] = frequency of character at data[i]
 	 */
+	 
+	for(int i = 0; i < str.length(); i++){
+	    freq[i] = 0;
+	}
+	/**
+	 * Set all list elements to zero i.e define them
+	 */
+	 
+	
 	for(int i = 0; i < str.length(); i++){
 		if(isPresent(data,str[i])){
-			freq[i] += 1;
+		    cout << str[i] << "present at " << isPresentWhere(data,str[i]) << endl;
+			freq[isPresentWhere(data,str[i])] += 1;
 		}
 		else {
 			data += str[i];
-			freq[i] += 1;
+			cout << str[i] << "present at " << isPresentWhere(data,str[i]) << endl;
+			freq[isPresentWhere(data,str[i])] += 1;
 		}
 	}
 
